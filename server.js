@@ -19,6 +19,10 @@ mongoose.connection.on('connected', () => {
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Hello app!');
+})
+
 // Routes go here
 app.use('/test-jwt', testJWTRouter);
 app.use('/users', usersRouter);
